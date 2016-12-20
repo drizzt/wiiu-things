@@ -14,10 +14,14 @@ import os
 import struct
 import sys
 from Crypto.Cipher import AES
-from Crypto.Hash import SHA1
+try:
+    from Crypto.Hash import SHA1
+except ImportError:
+    from Crypto.Hash import SHA
+    SHA1 = SHA
 
 # put the common key here to decrypt things
-wiiu_common_key = ""
+wiiu_common_key = "D7B00402659BA2ABD2CB0DB27FA2B656"
 
 ##########################
 
